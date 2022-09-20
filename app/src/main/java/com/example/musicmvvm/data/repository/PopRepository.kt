@@ -12,6 +12,6 @@ class PopRepository @Inject constructor(
     fun getPops() = performGetOperation(
         databaseQuery = {localDataSource.getAllPop()},
         networkCall = {remoteDataSource.getPops()},
-        saveCallResult = {localDataSource.insertAll(it.resultPopItems)}
+        saveCallResult = {localDataSource.insertAll(it.results)}
     )
 }
